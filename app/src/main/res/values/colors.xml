@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Backgrounds -->
+    <color name="app_bg">#FFF6FB</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#1C1C1C</color>
+    <color name="grey_text">#7A7A7A</color>
+
+    <!-- Brand Colors -->
+    <color name="nykaa_pink">#FF2E93</color>
+    <color name="nykaa_pink_dark">#E60073</color>
+    <color name="pink_light">#FFD6EA</color>
+
+    <!-- Gradient cards -->
+    <color name="cat_bg1">#FFF0F8</color>
+    <color name="cat_bg2">#EAF7FF</color>
+    <color name="cat_bg3">#FFF7E6</color>
+    <color name="cat_bg4">#EFFFF1</color>
+
+    <!-- Border -->
+    <color name="border_light">#E8E8E8</color>
+
+</resources>
