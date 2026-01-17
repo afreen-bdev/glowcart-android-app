@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiClient {
 
     // ⚠️ Use your PC IP (not localhost)
-    public static final String BASE_URL = "http://192.168.29.157:8080/";
+    public static final String BASE_URL = "https://glowcartbackend-production.up.railway.app";
 
     private static Retrofit retrofit;
 
