@@ -29,7 +29,7 @@ public interface ApiService {
     @GET("api/categories")
     Call<List<ApiCategoryModel>> getCategories();
 
-    @GET("api/health")
+    @GET("health")
     Call<String> healthCheck();
 
 }
