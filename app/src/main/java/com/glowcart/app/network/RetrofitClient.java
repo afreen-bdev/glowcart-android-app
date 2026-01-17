@@ -9,7 +9,7 @@ public class RetrofitClient {
 
     private static Retrofit retrofit;
 
-    private static final String BASE_URL = "https://glowcartbackend-production.up.railway.app";
+    private static final String BASE_URL = "http://glowcartbackend-production.up.railway.app";
 
     public static Retrofit getInstance() {
 
