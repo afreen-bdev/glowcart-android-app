@@ -8,6 +8,8 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.*;
+import retrofit2.http.GET;
+import retrofit2.http.POST;
 
 public interface ApiService {
 
@@ -28,7 +30,6 @@ public interface ApiService {
     Call<List<ApiCategoryModel>> getCategories();
 
     @GET("api/health")
-    Call<String> checkHealth();
-
+    Call<String> healthCheck();
 
 }

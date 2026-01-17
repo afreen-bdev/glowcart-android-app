@@ -4,6 +4,9 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+
+import com.glowcart.app.network.ApiService;
+import com.glowcart.app.network.RetrofitClient;
 import com.google.android.material.badge.BadgeDrawable;
 import com.glowcart.app.utils.CartManager;
 
@@ -12,6 +15,8 @@ import com.glowcart.app.fragments.CategoriesFragment;
 import com.glowcart.app.fragments.HomeFragment;
 import com.glowcart.app.fragments.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import retrofit2.Call;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -50,7 +55,27 @@ public class MainActivity extends AppCompatActivity {
 
             return true;
         });
+        ApiService apiService = RetrofitClient.getInstance().create(ApiService.class);
+
+        apiService.healthCheck().enqueue(new retrofit2.Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, retrofit2.Response<String> response) {
+                if (response.isSuccessful()) {
+                    System.out.println("✅ Backend Response: " + response.body());
+                } else {
+                    System.out.println("❌ Backend error: " + response.code());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+                t.printStackTrace();
+                System.out.println("❌ Connection failed: " + t.getMessage());
+            }
+        });
+
     }
+
 
     private void loadFragment(Fragment fragment) {
         getSupportFragmentManager()
@@ -75,4 +100,5 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         updateCartBadge();
     }
+
 }

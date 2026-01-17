@@ -9,16 +9,17 @@ public class RetrofitClient {
 
     private static Retrofit retrofit;
 
-    // ✅ Your Laptop IP
     private static final String BASE_URL = "https://glowcartbackend-production.up.railway.app";
 
     public static Retrofit getInstance() {
+
         if (retrofit == null) {
 
             HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
             interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
             OkHttpClient client = new OkHttpClient.Builder()
+                    .addInterceptor(interceptor)
                     .build();
 
             retrofit = new Retrofit.Builder()
@@ -27,6 +28,7 @@ public class RetrofitClient {
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
+
         return retrofit;
     }
 }
