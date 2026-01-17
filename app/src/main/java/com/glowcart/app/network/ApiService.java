@@ -26,4 +26,9 @@ public interface ApiService {
 
     @GET("api/categories")
     Call<List<ApiCategoryModel>> getCategories();
+
+    @GET("api/health")
+    Call<String> checkHealth();
+
+
 }
